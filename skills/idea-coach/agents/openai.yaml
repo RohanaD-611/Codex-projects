@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea Coach"
+  short_description: "Clarify vague ideas into executable skill specs"
+  default_prompt: "Use $idea-coach to clarify a vague skill idea and turn it into a minimal demo."
