@@ -1,16 +1,16 @@
 # Personal Writing Style Profile
 
-This profile summarizes the user's observed style from four Chinese articles plus later revision feedback after using the first version of the writing-style skill. Articles #1 and #2 are primary references; #3 and #4 are secondary calibration samples. The user's later feedback has higher priority because it corrects how the style should be applied.
+This profile summarizes the user's observed style from original Chinese articles, direct revision feedback, and the two revised idea-coach articles. The latest revision feedback has highest priority because it corrects how the style should be applied in real output.
 
 ## 1. Overall Style
 
-The user's writing is a reflective personal essay style with a clear argumentative line. It often begins from a concrete confusion, a recent conversation, an online observation, a public phrase, or a small life/work scene, then gradually expands into a broader judgment about AI, work, career, business, or social reality.
+The user's writing is a reflective personal essay style with a clear argument line. It usually begins from a concrete confusion, search habit, recent conversation, online observation, public phrase, or small life/work scene, then gradually expands into a broader judgment about AI, work, career, business, or social reality.
 
-The voice is calm but not neutral. It carries dissatisfaction, skepticism, and moral concern, but it usually avoids shouting. The strongest quality is "有秩序地发表自己的看法": the writing should feel like a person organizing their own thoughts in public, not like an AI summarizing a topic.
+The voice is calm but not neutral. It carries dissatisfaction, skepticism, and moral concern, but avoids shouting. The strongest quality is "有秩序地发表自己的看法": the writing should feel like a person organizing their own thoughts in public, not like an AI summarizing a topic.
 
-## 2. 2.0 Style Correction
+## 2. 3.0 Style Correction
 
-The earlier version overemphasized short paragraphs and contrast sentence patterns. That made generated writing too stiff, fragmented, and report-like.
+Earlier versions improved tone and flow, but still tended to over-explain, repeat the same reasoning, and keep too many themes inside one long article. Version 3.0 should be more selective.
 
 The corrected style should:
 
@@ -20,7 +20,11 @@ The corrected style should:
 - Connect process details into one continuous thought instead of stacking steps.
 - Replace vague abstraction with concrete description.
 - Reduce formulaic patterns such as "不是...而是..." and "从...到...".
-- Include the user's current conversational style, including phrases like "一通乱查", "搞不清楚自己想要什么", "追求本质是我的 mantra", and "这对我太有用了" when natural.
+- Remove repeated explanations. If the same reason appears in the opening, do not restate it later with only slightly different wording.
+- Use smoother connectives for parallel items, such as "和", "以及", "并且", instead of cutting every item with commas.
+- Avoid over-segmentation inside a sentence. If a clause naturally belongs together, keep it together.
+- Keep ordinary essays around 1000-2000 Chinese characters unless the user asks for longform.
+- Split broad material into multiple articles when themes differ.
 
 ## 3. Recurring Structure
 
@@ -33,6 +37,8 @@ Common arc:
 5. Return to the human meaning: why this matters to the user's time, energy, judgment, or sense of direction.
 6. End with a calm, grounded conclusion.
 
+The order should move forward. Once the article has explained "AI gives complete-looking solutions too quickly", later sections should not re-explain the same point. They should use a short callback and continue to the design decision, process, or result.
+
 Representative structural moves:
 
 - Personal state to concept: from "我还在找方向" to "个人定位不是想出来的".
@@ -40,6 +46,7 @@ Representative structural moves:
 - Meme to social critique: from "炸薯条" to hiring-market rigidity.
 - Conversation to values: from HR conversation to brand sustainability and respect for people.
 - Tool-use diary to thinking method: from creating an idea coach skill to realizing that the user needs AI to clarify essential problems before giving solutions.
+- Process article to follow-up article: from "0-1生成skill的过程" to "Skill 落地过程的一些小问题".
 
 ## 4. Voice And Attitude
 
@@ -52,6 +59,7 @@ The user tends to:
 - Resist both fatalism and fake optimism.
 - Prefer concrete feedback and action over abstract destiny or talent narratives.
 - Care strongly about "本质问题" and whether an idea can actually land.
+- Like practical clarity more than exhaustive detail.
 
 The tone often sits between:
 
@@ -60,6 +68,7 @@ The tone often sits between:
 - "现实确实让人难受"
 - "但还是需要回到具体行动"
 - "我需要它先帮我确定本质问题"
+- "这样至少第一版可以先跑通"
 
 ## 5. Sentence Habits
 
@@ -74,6 +83,8 @@ Useful sentence movements:
 - "比起..."
 - "这看起来..."
 - "至少在我这里是这样"
+- "这个过程很耗时间，也有可能把我带偏"
+- "等以后真的用多了再判断要不要拆分"
 
 Use contrast carefully. The user likes conceptual contrast, but does not want the prose to be filled with mechanical "不是...而是..." sentences.
 
@@ -88,19 +99,40 @@ The user likes contrast pairs:
 - 解决方案 / 本质问题
 - 自动狂奔 / 等我确认
 
-## 6. Paragraphing
+Use these contrasts as conceptual anchors, not repeated sentence templates.
+
+## 6. Paragraphing And Sentence Flow
 
 The corrected paragraph rule is: write one paragraph per complete meaning.
 
-Short standalone sentences are allowed only when they mark a real turn or pause. They should not become the default layout. The user's own feedback is an important sample: a paragraph can contain several linked clauses, explanations, and examples, and this gives the writing a softer human texture.
+Short standalone sentences are allowed only when they mark a real turn or pause. They should not become the default layout. A paragraph can contain several linked clauses, explanations, and examples; this gives the writing a softer human texture.
 
-Good paragraph behavior:
+Good behavior:
 
 - A paragraph may explain one thought across several sentences.
 - Process paragraphs should show why a step happened.
 - Questions should not be stacked line by line unless the user asks for outline style.
+- Parallel nouns should often be connected with "和" or "以及" so the sentence reads naturally.
+- Punctuation should not create pauses where a normal person would keep speaking.
 
-## 7. Topic Tendencies
+Examples:
+
+- Prefer "需求顾问、产品经理教练以及 Skill 架构师这三种模式".
+- Prefer "等以后真的用多了再判断要不要拆分".
+- Prefer "问问题、整理信息和形成文档".
+
+## 7. Length And Splitting
+
+The user's preferred default article length is 1000-2000 Chinese characters. Longer writing can be acceptable when the user explicitly asks for detail, but the default should not preserve every process detail.
+
+When a topic has two scopes, split it:
+
+- Main process article: why the idea appeared, how the skill was designed, and what the user learned.
+- Landing problems article: encoding, GitHub, installation, directory linking, or other implementation issues.
+
+This split improves readability and matches how the user revised the idea-coach article into two pieces.
+
+## 8. Topic Tendencies
 
 Strong fit:
 
@@ -121,7 +153,7 @@ Weak fit unless adapted:
 - Viral listicles.
 - Generic productivity advice.
 
-## 8. Language Preferences
+## 9. Language Preferences
 
 Preferred wording:
 
@@ -134,7 +166,7 @@ Preferred wording:
 
 Avoid making the prose too polished. A small amount of everyday phrasing is part of the user's voice.
 
-## 9. Title Style
+## 10. Title Style
 
 Observed title patterns:
 
@@ -143,10 +175,12 @@ Observed title patterns:
 - A quoted concept or meme plus "困境".
 - A value proposition framed plainly.
 - A direct tool-use diary title such as "我给自己做了一个 idea coach skill".
+- A practical process title such as "5分钟从0到1打造第一个Skill的整个过程".
+- A follow-up problem title such as "Skill 落地过程的一些小问题".
 
 Titles should be specific and reflective. They should not sound like content-farm titles.
 
-## 10. Editing Principles
+## 11. Editing Principles
 
 When improving drafts:
 
@@ -155,10 +189,13 @@ When improving drafts:
 - Preserve concrete social details and thinking traces.
 - Remove generic motivational language.
 - Merge fragmented single-sentence paragraphs when they belong to one thought.
+- Cut repeated explanations and keep the strongest version.
+- Smooth over-frequent breaks with natural connectives.
+- Split a long draft into two articles when the second topic can stand alone.
 - Add transitions only when the thought jump is unclear.
 - Keep criticism grounded in observed reality.
 - Let the ending settle rather than explode.
 
-## 11. English Limitation
+## 12. English Limitation
 
 No English source samples were provided. English writing should therefore be treated as a cross-language adaptation of the user's Chinese thinking style. It can preserve structure, tone, restraint, and argumentative movement, but not a fully verified English diction profile.

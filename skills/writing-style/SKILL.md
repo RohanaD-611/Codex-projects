@@ -1,15 +1,15 @@
 ---
 name: writing-style
-description: Apply the user's personal Chinese writing style 2.0 for WeChat Official Account essays, personal essays, AI-use diaries, reflective opinion pieces, article rewriting, polishing, continuation, titling, and outlining. Use when the user asks to write in their own voice, revise AI-generated prose to sound like them, reduce AI flavor, make writing more daily and coherent, or write about AI, Codex skills, career planning, work, business ethics, personal positioning, or social observation. Primary language is Chinese; English output should transfer structure and tone only because no English samples exist.
+description: Apply the user's personal Chinese writing style 3.0 for WeChat Official Account essays, personal essays, AI-use diaries, reflective opinion pieces, article rewriting, polishing, continuation, titling, and outlining. Use when the user asks to write in their own voice, revise AI-generated prose to sound like them, reduce AI flavor, make writing more daily, concise, coherent, or write about AI, Codex skills, career planning, work, business ethics, personal positioning, or social observation. Prefer 1000-2000 Chinese characters per standalone article unless the user asks otherwise; split broad topics into separate articles when themes differ. Primary language is Chinese; English output should transfer structure and tone only because no English samples exist.
 ---
 
-# Writing Style Skill 2.0
+# Writing Style Skill 3.0
 
 ## Purpose
 
 Use this skill to write or edit in the user's personal essay style. The style is mainly Chinese, suited for WeChat Official Account articles, personal essays, AI-use diaries, reflective notes, and opinion pieces.
 
-The writing should feel like the user is thinking through a real problem in daily life, not presenting a polished report. It should have order, but not be stiff; judgment, but not a lecturing tone; personal texture, but not scattered diary fragments.
+The writing should feel like the user is thinking through a real problem in daily life, not presenting a polished report. It should have order, but not be stiff; judgment, but not a lecturing tone; personal texture, but not scattered diary fragments. Version 3.0 adds stricter rules for concision, de-duplication, smoother sentence connection, and article splitting.
 
 具体文章风格详见 `references/reference.md`。Every time this skill is used for writing, rewriting, polishing, or style diagnosis, read `references/reference.md` first and use it as the primary sample reference. Use `references/style-profile.md` only as a secondary diagnosis file.
 
@@ -38,7 +38,7 @@ Write with these qualities:
 
 The voice should not sound like a consultant report, product update, public-intellectual speech, viral post, or AI-generated summary.
 
-## 2.0 Corrections
+## 3.0 Corrections
 
 These rules override earlier habits:
 
@@ -48,6 +48,12 @@ These rules override earlier habits:
 - Avoid vague abstraction such as "它其实还是空的". Replace it with concrete description, for example "它只是一个没有明确线索的头绪", "我还不知道第一步应该从哪里拆", or "它听起来像方向，但还没有落到可执行的步骤里".
 - When writing about a process, do not pile up steps. Connect the process to the user's inner reason: why this step appeared, what uncertainty it solved, what changed after it.
 - When writing about AI or Codex skills, keep the tool in the background unless the tool itself is the subject. The article should still read like a person's use diary, not a feature manual.
+- Remove repeated reasoning. Explain a core point once with the strongest phrasing; later references should be shorter callbacks, not full restatements.
+- Keep the logic order clean. Do not repeat "AI gives too many solutions" in three places. Place it once near the opening, then move forward to the user's need, design decision, process, and meaning.
+- Smooth sentence connection. Use "和", "以及", "并且", "然后", "后来", "所以" to connect parallel nouns or related actions when a comma would make the sentence choppy.
+- Avoid unnecessary pauses inside simple phrases. Prefer "等以后真的用多了再判断要不要拆分" over "等以后真的用多了，再判断要不要拆分".
+- Keep regular articles around 1000-2000 Chinese characters unless the user asks for a long piece.
+- If one draft contains two different themes, split it into two articles instead of forcing everything into one long essay.
 
 ## Openings
 
@@ -87,6 +93,29 @@ For the idea-coach topic specifically, prefer this line:
 - The key requirement is not "give me a full solution", but "help me identify the essential problem first". The user's mantra is pursuing the essence.
 - Each stage should wait for confirmation before moving on, because the user wants a tool that helps thinking, not an agent that runs ahead.
 
+## Article Scope And Length
+
+Before drafting, identify how many distinct article themes are present.
+
+Use one article when:
+
+- The content follows one continuous question, such as "how I created a skill from 0 to 1".
+- Setup details, process, and conclusion all support the same central idea.
+
+Split into multiple articles when:
+
+- One part is about the thinking or creation process, and another part is about technical landing issues.
+- GitHub, installation, validation, encoding, or directory-link details start competing with the main essay.
+- The draft would exceed 2000 Chinese characters without a clear reason.
+- The second half can stand alone as a separate "一些小问题", "后续落地", or "踩坑记录" piece.
+
+For example, split the idea-coach story into:
+
+- "0-1生成skill的过程": why the user needed idea coach, how modes were designed, and what the skill means.
+- "Skill 落地过程的一些小问题": encoding validation, GitHub storage, global installation, and directory links.
+
+When splitting, do not over-explain the split. Just produce separate titles and separate articles.
+
 ## Paragraph Rhythm
 
 Write by paragraph-level meaning, not by sentence-level display.
@@ -105,6 +134,7 @@ Avoid:
 - Overly clean symmetrical paragraphs.
 - Repeated "这个模式..." openings.
 - Turning every thought into a bullet list unless the user requests a structured document.
+- Over-fragmented punctuation. If a sentence is naturally connected, keep it connected.
 
 ## Sentence And Diction
 
@@ -131,6 +161,18 @@ Keep the user's existing reflective vocabulary:
 
 Use common English terms naturally when the user would use them: AI, Codex, skill, MVP, HR, KPI, pass, mantra. Add spaces around English terms when it improves readability, for example "AI 跟我说", "Codex skill", "idea coach skill".
 
+## Concision And De-duplication
+
+After drafting, run a compression pass:
+
+1. Find repeated claims. If two paragraphs say the same thing in different words, keep the clearer one.
+2. Find paragraphs that only restate the premise. Cut or merge them.
+3. Find explanatory phrases that can be shortened without losing meaning.
+4. Keep useful texture, such as "聪明又勤快的 AI 同志", only when it adds voice and does not repeat a point.
+5. Prefer one strong concrete example over three abstract explanations.
+
+Do not remove all softness. The user still likes natural conversational texture. The goal is not brevity at all costs; the goal is fewer loops.
+
 ## Sentence Pattern Guidance
 
 Allowed, but use sparingly:
@@ -150,6 +192,12 @@ Reduce:
 
 When a sentence feels like a slogan, soften it with process or example.
 
+Connect parallel items smoothly:
+
+- Prefer "需求顾问、产品经理教练以及 Skill 架构师这三种模式" over a bare comma chain when it reads smoother.
+- Prefer "问问题、整理信息和形成文档" over "问问题、整理信息、形成文档" when the sentence is otherwise conversational.
+- Use Chinese connectives to reduce the sense of clipped machine prose.
+
 ## Writing About Process
 
 When describing how the user created a skill or used AI:
@@ -159,6 +207,7 @@ When describing how the user created a skill or used AI:
 - Avoid dumping a feature list. Describe modes through the problem they solve in the user's thinking process.
 - If listing modes is necessary, summarize them in prose first, then use a compact list only if it improves clarity.
 - Avoid making GitHub, directory links, or installation details dominate the article unless the user's article is about tool setup.
+- If landing details are interesting but pull focus from the main idea, move them into a second article.
 
 ## Prohibited Or High-Risk Patterns
 
@@ -196,19 +245,24 @@ When writing from scratch:
 
 1. Read `references/reference.md`.
 2. Identify the user's real entry point: habit, confusion, search path, conversation, recent thought, or concrete event.
-3. Identify the essence of the problem before proposing structure.
-4. Draft in paragraph-level meaning units.
-5. Check whether each process detail is connected to a personal reason.
-6. Remove AI-report phrasing, slogan endings, mechanical contrasts, and excessive short paragraphs.
+3. Identify whether the material should be one article or multiple articles.
+4. Identify the essence of the problem before proposing structure.
+5. Draft in paragraph-level meaning units.
+6. Check whether each process detail is connected to a personal reason.
+7. Compress repeated claims and keep the article near 1000-2000 Chinese characters unless instructed otherwise.
+8. Remove AI-report phrasing, slogan endings, mechanical contrasts, excessive short paragraphs, and unnecessary punctuation breaks.
 
 When rewriting or polishing:
 
 1. Read `references/reference.md`.
 2. Preserve the user's point of view and concrete details.
-3. Turn fragmented single-sentence paragraphs into fuller paragraphs where the meaning belongs together.
-4. Replace vague abstract words with concrete descriptions.
-5. Reduce "不是...而是..." and other formulaic contrast structures.
-6. Make the article flow as one connected thought.
+3. Check whether the topic should be split into two shorter pieces.
+4. Turn fragmented single-sentence paragraphs into fuller paragraphs where the meaning belongs together.
+5. Replace vague abstract words with concrete descriptions.
+6. Reduce "不是...而是..." and other formulaic contrast structures.
+7. Merge repeated explanations and remove loops.
+8. Smooth clipped sentence breaks with natural connectives.
+9. Make each article flow as one connected thought.
 
 When generating titles:
 
