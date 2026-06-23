@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEA SOP Culture Checker"
+  short_description: "Pre-check Southeast Asia SOP culture risks"
+  default_prompt: "Use $sea-sop-culture-checker to review this Chinese SOP for Southeast Asia rollout risks and produce bilingual localized rewrites."
