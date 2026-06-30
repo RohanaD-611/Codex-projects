@@ -94,7 +94,59 @@ Ask whether to enter Product Manager Coach mode to judge priority and narrow the
 -
 
 ## Confirmation Gate
-Ask whether to enter Skill Architect mode to turn the workflow into a skill structure and SKILL.md draft. Offer exactly these choices: yes; no, needs adjustment.
+If the next step may involve code, ask whether to confirm the MVP and produce a Specification Document before implementation. Offer exactly these choices: yes; no, needs adjustment.
+
+If no code is involved, ask whether to enter Skill Architect mode to turn the workflow into a skill structure and SKILL.md draft. Offer exactly these choices: yes; no, needs adjustment.
+````
+
+## Specification Document
+
+Use this template before writing or modifying code.
+
+````markdown
+# Specification Document
+
+## 1. Problem Statement
+- One-sentence user experience:
+- Problem to solve:
+- Current pain or failure mode:
+
+## 2. Proposed Solution
+- Core functionality:
+- Quantity or scope:
+- Interaction flow:
+- Visual or content requirements:
+- Concrete numbers:
+
+## 3. Technical Constraints
+- Technical stack:
+- Existing project or file location:
+- Dependencies:
+- Runtime or platform:
+- Device and responsive requirements:
+- Implementation constraints:
+
+## 4. Non-goals
+- Not building:
+- Not changing:
+- Not optimizing:
+- Not deciding yet:
+
+## 5. Success Criteria
+- Functional checks:
+- UX checks:
+- Mobile checks:
+- Technical checks:
+- Verification method:
+
+## 6. Assumptions
+-
+
+## 7. Open Questions
+-
+
+## Confirmation Gate
+Ask whether the Specification Document is confirmed and whether to proceed to the next mode or implementation planning. Offer exactly these choices: yes; no, needs adjustment.
 ````
 
 ## Skill Architecture Document
@@ -124,7 +176,12 @@ Ask whether to enter Skill Architect mode to turn the workflow into a skill stru
 ## 6. Output Templates
 -
 
-## 7. File Structure
+## 7. Spec Gate
+- Required before code:
+- Required spec sections:
+- Confirmation rule:
+
+## 8. File Structure
 ```text
 skills/
   skill-name/
@@ -133,12 +190,12 @@ skills/
       output-templates.md
 ```
 
-## 8. Content Placement
+## 9. Content Placement
 - Put in `SKILL.md`:
 - Put in `references/`:
 - Do not include:
 
-## 9. SKILL.md Draft
+## 10. SKILL.md Draft
 
 ```markdown
 ---
@@ -176,4 +233,6 @@ description:
 ## 6. First Landing Location
 
 ## 7. Explicitly Out Of Scope For Now
+
+## 8. Specification Required Before Code
 ````
