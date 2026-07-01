@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Overseas Candidate Screening</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Overseas hiring</p>
+        <h1>Candidate Screening</h1>
+      </div>
+      <div class="header-actions">
+        <span id="status-pill" class="status-pill">待分析</span>
+        <a id="export-html" class="ghost-link hidden" href="#">HTML</a>
+        <a id="export-csv" class="ghost-link hidden" href="#">CSV</a>
+        <a id="export-json" class="ghost-link hidden" href="#">JSON</a>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="input-panel">
+        <form id="analysis-form" class="stack">
+          <section class="panel-section">
+            <h2>岗位信息</h2>
+            <label>岗位名称<input id="job-title" name="job_title" required value="Overseas Sales Manager" /></label>
+            <label>目标市场/国家<input id="target-market" name="target_market" value="Singapore" /></label>
+            <label>JD 文本<textarea id="job-description" name="job_description" required></textarea></label>
+          </section>
+
+          <section class="panel-section">
+            <h2>分析设置</h2>
+            <div class="segmented">
+              <label><input type="radio" name="mode" value="single" />单份简历</label>
+              <label><input type="radio" name="mode" value="batch" checked />批量简历</label>
+            </div>
+            <label>上传简历<input id="resumes" name="resumes" type="file" multiple accept=".pdf,.docx,.txt" required /></label>
+            <div id="file-list" class="file-list">尚未选择文件</div>
+            <label>Top N<input id="top-n" name="top_n" type="number" min="1" value="10" /></label>
+          </section>
+
+          <section class="panel-section">
+            <h2>薪酬设置</h2>
+            <div class="grid-2">
+              <label>币种<select id="salary-currency" name="salary_currency">
+                <option>SGD</option><option>USD</option><option>CNY</option><option>MYR</option>
+                <option>THB</option><option>IDR</option><option>VND</option><option>PHP</option>
+              </select></label>
+              <label>周期<select id="salary-period" name="salary_period">
+                <option value="year">年薪</option><option value="month">月薪</option>
+                <option value="day">日薪</option><option value="hour">小时薪</option>
+              </select></label>
+              <label>下限<input id="salary-min" name="salary_min" type="number" value="80000" /></label>
+              <label>上限<input id="salary-max" name="salary_max" type="number" value="120000" /></label>
+            </div>
+          </section>
+
+          <section class="panel-section">
+            <h2>筛选条件</h2>
+            <label>硬性条件<textarea id="hard-requirements" name="hard_requirements">English
+Southeast Asia</textarea></label>
+            <label>Must-have skills<textarea id="must-have" name="must_have_skills">channel sales
+enterprise sales
+team management</textarea></label>
+            <label>Nice-to-have skills<textarea id="nice-to-have" name="nice_to_have_skills">SaaS
+Mandarin
+cross-border business</textarea></label>
+          </section>
+
+          <button id="analyze-button" class="primary-button" type="submit">开始分析</button>
+        </form>
+      </aside>
+
+      <section class="results-panel">
+        <div id="empty-state" class="empty-state">
+          <h2>等待分析</h2>
+          <p>输入 JD 并上传简历后，这里会显示候选人排名、摘要、维度分和详细分析入口。</p>
+        </div>
+        <div id="results-view" class="hidden">
+          <div id="summary-bar" class="summary-bar"></div>
+          <div id="candidate-list" class="candidate-list"></div>
+        </div>
+        <div id="detail-view" class="hidden"></div>
+      </section>
+
+      <aside id="interview-drawer" class="interview-drawer">
+        <div class="drawer-empty">
+          <h2>面试问题</h2>
+          <p>从候选人卡片选择 HR、业务或管理层面试。</p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
