@@ -1,0 +1,2 @@
+﻿1.1.0
+Color-optimized static portfolio based on UI Designer skill guidance.
