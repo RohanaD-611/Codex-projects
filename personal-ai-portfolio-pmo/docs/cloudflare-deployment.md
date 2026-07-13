@@ -37,7 +37,7 @@ RohanaD-611/Codex-projects
 
 ```text
 Framework preset: None
-Root directory: personal-ai-portfolio
+Root directory: personal-ai-portfolio/personal-ai-portfolio-pmo
 Build command: 留空
 Build output directory: .
 ```
