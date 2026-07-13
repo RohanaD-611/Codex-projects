@@ -1,0 +1,847 @@
+const qaItems = [
+  {
+    "id": 1,
+    "question": "请你做一个简单的中文自我介绍。",
+    "variants": [
+      "请你做一个简单的中文自我介绍。"
+    ],
+    "keywords": [
+      "中文",
+      "自我介绍",
+      "介绍",
+      "中文自我介绍",
+      "个人介绍",
+      "背景",
+      "中文+自我介绍",
+      "中文介绍"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "您好，我叫邓雅木。本科是马来语专业，之后在汽车线束制造企业做了三年多海外项目管理，参与和主导过 3 个从 0 到 1 的海外重点项目，主要负责可行性分析、资源规划、风险预案、成本控制、跨部门推进以及 SOP 建设。\n\n后来我在暨南大学完成了全日制 MBA，补充了商业分析、流程分析和结构化判断能力。MBA 之后，我又通过外贸项目、跨境运营、猎头匹配和 AI 工具实践，进一步确认自己更适合在复杂业务中做项目推进、流程优化和信息决策支持。\n\n我目前希望聚焦 PMO、项目管理、流程优化和 AI 业务支持岗位。我的优势是能把分散、不完整的信息整理成清晰的项目结构，识别关键风险，推动跨部门协作，并把经验沉淀为流程和工具。海外项目和跨文化背景，则是我在相关业务场景中的额外优势。"
+  },
+  {
+    "id": 2,
+    "question": "请你用英文做一个 简单的自我介绍。",
+    "variants": [
+      "请你用英文做一个 简单的自我介绍。"
+    ],
+    "keywords": [
+      "英文",
+      "自我介绍",
+      "介绍",
+      "用英文做",
+      "个人介绍",
+      "背景",
+      "英文+自我介绍",
+      "英文介绍",
+      "English intro"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "Hello, my name is Yamu Deng. I majored in Malay Studies and later worked for more than three years in overseas project management at an automotive wiring harness manufacturer. I supported three overseas projects from zero to one, covering feasibility analysis, resource planning, risk control, cost management, cross-functional coordination, and SOP development.\n\nI then completed a full-time MBA at Jinan University, where I strengthened my skills in business analysis, process analysis, and structured decision-making. After my MBA, I gained additional experience through foreign trade projects, cross-border operations, recruitment support, and AI workflow practice.\n\nThese experiences helped me clarify that I am best suited to PMO, project management, process optimization, and AI-enabled business support roles. My strength is turning complex and incomplete information into clear project structures, identifying risks, coordinating different teams, and turning experience into reusable processes and tools. My overseas and cross-cultural background is an additional advantage in international business settings."
+  },
+  {
+    "id": 3,
+    "question": "你的经历看起来跨度有点大，为什么？你是怎么思考的？/ 你的稳定性如何？",
+    "variants": [
+      "你的经历看起来跨度有点大，为什么",
+      "你是怎么思考的",
+      "你的稳定性如何"
+    ],
+    "keywords": [
+      "经历跨度大",
+      "稳定性"
+    ],
+    "module": "Timeline",
+    "recommended": false,
+    "answer": "我确实经历了一个职业再定位阶段，但不是完全无关联地更换方向。\n\nMBA 之前，我在制造业做的是长期组织型海外项目，主要解决项目如何从 0 到 1 落地的问题。MBA 之后，我通过外贸、猎头、跨境运营和 AI 工具，分别接触了客户与供应商、人才匹配、平台运营和工具化提效。\n\n这些经历让我从不同角度理解出海业务中的“人、货、平台和流程”，也让我更明确：我不适合强销售 KPI 或纯碎片化客服，更适合项目推进、信息结构化、流程优化和判断支持。制造业海外项目是项目和流程；猎头咨询是出海企业的人才匹配；外贸项目是货和供应链；跨境运营是平台和订单；AI 项目是提升信息整理与判断效率的工具。\n\n所以我现在不是继续发散，而是把这些经历收束到 PMO、项目管理、流程优化和 AI 业务支持这条线上。它和我 MBA 之前的项目经验是同一类型，但现在加入了商业分析、组织适配和工具化能力，是沉淀后的升级版。"
+  },
+  {
+    "id": 4,
+    "question": "你目前考虑找什么方向的工作？",
+    "variants": [
+      "你目前考虑找什么方向的工作"
+    ],
+    "keywords": [
+      "考虑",
+      "什么方向",
+      "方向",
+      "工作"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我目前聚焦的是 PMO、项目管理、流程优化支持类岗位。\n\n我过去在制造业做过三年多海外项目管理，参与过 3 个从 0 到 1 的海外重点项目，涉及可行性分析、资源规划、成本控制、风险识别和跨部门推进。MBA 之后，我又通过外贸项目、猎头咨询、跨境运营和 AI 工具实践，补充了业务判断、信息整理和工具化能力。\n\n现在我希望进入一个真实业务场景，承担项目推进、流程梳理、信息分析和跨部门协同工作。海外业务和跨文化协作是我比较有优势的应用场景，但不是我唯一的岗位限制。"
+  },
+  {
+    "id": 5,
+    "question": "你网页上有项目管理 PMO、流程优化支持、AI 工具化与经营分析支持 这几个方向，你更擅长哪个？",
+    "variants": [
+      "你网页上有项目管理 PMO、流程优化支持、AI 工具化与经营分析支持 这几个方向，你更擅长哪个"
+    ],
+    "keywords": [
+      "多方向",
+      "考虑哪个",
+      "擅长哪个"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我最擅长的是项目管理和流程优化支持。PMO是对应的岗位形态，经营分析是判断能力，AI是提效工具。我的主线还是把复杂项目拆清楚、推动跨部门协作，并把经验沉淀成可复用流程。"
+  },
+  {
+    "id": 6,
+    "question": "如果是项目管理和流程优化二选一呢？",
+    "variants": [
+      "如果是项目管理和流程优化二选一呢"
+    ],
+    "keywords": [
+      "项目管理",
+      "流程优化",
+      "二选一"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我更偏项目管理，但我的项目管理风格比较重视流程优化和风险前置。因为流程优化需要依托具体业务和项目，我更擅长在推进项目的过程中发现问题、优化机制，而不是脱离业务单独做流程设计。"
+  },
+  {
+    "id": 7,
+    "question": "你在找什么样的公司和岗位？",
+    "variants": [
+      "你在找什么样的公司和岗位"
+    ],
+    "keywords": [
+      "找",
+      "什么类型",
+      "什么样",
+      "公司",
+      "岗位"
+    ],
+    "module": "Contact",
+    "recommended": true,
+    "answer": "我会考虑这两点：\n\n第一，看岗位是否和 PMO / 项目管理 / 流程优化支持有关，而不是强销售或纯客服式运营。如果业务涉及海外项目、出海团队或跨文化协作，会是我更能发挥差异化优势的场景。\n\n第二，看岗位是否有结构化沉淀空间。我希望下一份工作能在一个系统化场景里沉淀至少3 年。"
+  },
+  {
+    "id": 8,
+    "question": "你不适合什么类型的岗位？",
+    "variants": [
+      "你不适合什么类型的岗位"
+    ],
+    "keywords": [
+      "不适合",
+      "什么类型",
+      "什么样",
+      "公司",
+      "岗位"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我不太适合长期以陌生开发、强销售转化、纯客服响应或大量重复机械操作为核心的岗位。\n\n但这不代表我不能承受压力，也不代表我拒绝基础工作。过去海外项目中，我面对过预算、进度、资源和跨部门协同压力，也做过大量资料整理和过程跟踪。\n\n我更适合的是有明确业务目标，但问题比较复杂、需要拆解和推进的环境。如果基础工作能够连接到项目交付、业务理解、流程优化或知识沉淀，我愿意做；如果岗位长期只有重复响应和销售转化，那可能不是双方最优匹配。"
+  },
+  {
+    "id": 9,
+    "question": "未来的职业规划是什么？",
+    "variants": [
+      "未来的职业规划是什么"
+    ],
+    "keywords": [
+      "职业规划"
+    ],
+    "module": "Timeline",
+    "recommended": false,
+    "answer": "短期 1 年，我希望先在岗位上熟悉公司的业务链条、产品、重点市场、流程和协作机制，把项目推进、信息结构化和流程沉淀能力落到具体业务里。\n\n中期 2-3 年，我希望能负责更完整的项目或区域业务支持模块，比如某个市场进入、海外合作方协同、流程标准化或跨文化团队适配。\n\n长期我希望成为复合型项目与组织支持角色，既懂业务推进，也懂跨文化协作和流程工具，能帮助公司以更低成本提升团队效率。"
+  },
+  {
+    "id": 10,
+    "question": "你和普通项目助理 / 总助 / PMO 有什么不同？",
+    "variants": [
+      "你和普通项目助理",
+      "总助",
+      "PMO 有什么不同"
+    ],
+    "keywords": [
+      "有什么不同",
+      "与其他项目管理人员的差异化"
+    ],
+    "module": "Cases",
+    "recommended": false,
+    "answer": "我认为区别不完全在职位名称，而在工作深度。\n\n纯项目助理可能更多是资料整理、会议安排和进度跟进；我除了完成这些基础工作，还会关注项目目标、关键依赖、风险点和决策缺口。\n\n比如过去做海外项目时，我不是简单地催各部门交付，而是会把客户需求、资源、采购、生产、质量、海外团队和时间节点串起来，判断哪些问题会影响后续结果，并把经验沉淀成 SOP 和知识档案。\n\n所以我既能做执行，也能理解为什么做、哪里可能出问题，以及如何让下一次推进更高效。"
+  },
+  {
+    "id": 11,
+    "question": "你做过哪些项目管理或流程优化案例？/讲一个你主导的（印象深刻的）海外项目。",
+    "variants": [
+      "你做过哪些项目管理或流程优化案例",
+      "讲一个你主导的（印象深刻的）海外项目。"
+    ],
+    "keywords": [
+      "做过哪些",
+      "项目管理",
+      "流程优化",
+      "案例",
+      "主导的",
+      "印象深刻"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "比较典型的是我在整车线束制造企业做海外项目平台工程师时，参与并主导过 3 个从 0 到 1 的海外重点项目。\n\n这些项目涉及客户需求、资源规划、采购、生产、仓储、质量、海外分公司等多个环节。早期问题是信息分散、节点不清、风险暴露较晚，项目推进容易依赖个人经验。\n\n我的做法是把海外项目拆成前期可行性分析、设计验证、OTS、小批量验证、量产复盘、海外转移和落地量产等阶段，并整理每个阶段的责任部门、关键风险点和输出物，沉淀成 SOP 和知识档案。\n\n这个动作的价值是让后续项目不用每次都从零开始摸索。团队可以更快知道某个节点该找谁、要确认什么、哪些风险不能拖到后面。后来在项目推进中，我们也通过这种流程化方式支持了别的海外项目落地，并推动部分项目转移到海外分公司按期量产。"
+  },
+  {
+    "id": 12,
+    "question": "关于流程优化，MBA 之后有哪些案例？",
+    "variants": [
+      "关于流程优化，MBA 之后有哪些案例"
+    ],
+    "keywords": [
+      "MBA后",
+      "做过哪些",
+      "项目管理",
+      "流程优化",
+      "案例",
+      "主导的",
+      "印象深刻"
+    ],
+    "module": "Timeline",
+    "recommended": false,
+    "answer": "MBA 之后我做了几类流程化和结构化实践。\n\n第一，在采购支持中，除了按照公司的报价流程，我还站在领导的需求角度，补充了海外渠道信息，围绕价格影响的人、产品、运输因素补充了几个报价维度，梳理成表格形式方便对比，并提出支持决策的方案。\n\n第二，在跨境供应链Y2模式创建过程，我将混乱的信息梳理成分部门、分阶段执行的流程再进行推进动作，完成从0-500的订单指标。\n\n第三，在 AI 实践中，我把岗位匹配、SOP 本地化检查、需求澄清和知识沉淀拆成结构化输入、处理和输出流程。\n\n我一直在把业务问题流程化、结构化，并且在不同场景中验证这套方法。"
+  },
+  {
+    "id": 13,
+    "question": "你如何用 AI 支持项目管理或流程优化？",
+    "variants": [
+      "你如何用 AI 支持项目管理或流程优化"
+    ],
+    "keywords": [
+      "如何",
+      "AI 支持",
+      "流程优化",
+      "项目管理"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我的 AI 能力主要偏业务应用和流程设计。\n\n我通常会先判断一个场景是否适合 AI，比如信息量大、规则相对清楚、需要重复整理，但最终仍由人做判断的工作。\n\n目前我实践过的场景包括：把岗位需求和候选人材料进行结构化匹配、对总部 SOP 和 KPI 做跨文化风险预检、把模糊想法整理成需求和 MVP、沉淀知识库和工作流。\n\n如果放到 PMO 场景，我会优先从会议纪要和行动项提取、项目周报生成、风险清单更新、项目资料归档、SOP 检查和复盘信息整理这些低风险环节切入。我的原则是让 AI 减少信息整理和重复劳动，但重要判断、风险确认和最终决策仍由人负责。"
+  },
+  {
+    "id": 14,
+    "question": "你的海外项目和跨文化经验能带来什么价值？",
+    "variants": [
+      "你的海外项目和跨文化经验能带来什么价值",
+      "你能为我们带来什么"
+    ],
+    "keywords": [
+      "海外项目",
+      "跨文化经验",
+      "价值"
+    ],
+    "module": "Thinking Model",
+    "recommended": true,
+    "answer": "我能带来的价值，首先是把复杂、分散、涉及多方协作的工作，整理成可推进、可跟踪、可复盘的项目机制。\n\n在 PMO 和流程优化场景中，我可以支持项目拆解、节点推进、风险识别、会议与行动项跟踪、SOP 梳理、流程复盘，以及管理信息的结构化输出，帮助团队减少信息断层和执行偏差。\n\n同时，我具备 MBA 商业分析训练和 AI 工具化实践，能够把调研资料、项目文档和业务问题整理成更清晰的判断依据，并在会议纪要、资料对比、风险清单、知识沉淀和工作流自动化等环节引入 AI，提高信息处理和协作效率。\n\n海外项目与跨文化背景则是我的加分项，尤其适合涉及跨部门、跨地区或出海业务的协作场景。我的定位不是替代业务负责人做决策，而是帮助团队把目标、流程、信息和协作机制连接起来，让项目更稳地推进。"
+  },
+  {
+    "id": 15,
+    "question": "陈述一下你的海外 / 跨文化协作经验？",
+    "variants": [
+      "陈述一下你的海外",
+      "跨文化协作经验"
+    ],
+    "keywords": [
+      "海外项目",
+      "跨文化",
+      "经验"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我的海外和跨文化经验主要有三层。\n\n第一是语言和区域背景。本科是马来语专业，有马来亚大学交换经历，对马来西亚和东南亚语境有基础理解。\n\n第二是工作项目经验。在柳州双飞的海外项目中，我参与和主导过海外重点项目推进，涉及东南亚、中东、北美等市场，也协助海外分公司在 3 个月内完成搬迁与布局规划，并主导 2 个项目转移到海外分公司按期量产。这个过程需要协调总部、生产、采购、仓储、质量和海外团队。\n\n第三是研究和方法沉淀。我的 MBA 论文是 A 公司马来西亚子公司跨文化冲突管理研究。我关注的不只是文化差异本身，而是总部制度、KPI、SOP、沟通方式和当地执行习惯之间的适配。\n\n所以我理解的跨文化协作，不是简单说“尊重差异”，而是把总部管控底线和本地执行现实之间的冲突翻译成可调整的流程和沟通机制。"
+  },
+  {
+    "id": 16,
+    "question": "你希望后续的岗位能给你带来什么？",
+    "variants": [
+      "你希望后续的岗位能给你带来什么"
+    ],
+    "keywords": [
+      "岗位",
+      "带来什么"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我希望后续岗位能给我两方面的成长。\n\n第一，比较清晰的职责边界和逐步增加的项目责任。我可以从具体的项目跟进、信息整理和流程支持做起，然后逐渐承担更完整的项目模块。\n\n第二，有机会接触业务完整链条。我的优势是信息结构化、风险识别和流程沉淀，希望这些能力能和业务结果连接起来。"
+  },
+  {
+    "id": 17,
+    "question": "为什么从上一份稳定的海外项目工作离开，去读 MBA？",
+    "variants": [
+      "为什么从上一份稳定的海外项目工作离开，去读 MBA"
+    ],
+    "keywords": [
+      "为什么离职去读MBA"
+    ],
+    "module": "Timeline",
+    "recommended": false,
+    "answer": "当时我在制造业海外项目里已经积累了比较完整的项目推进经验，包括项目从 0 到 1、跨部门协作、海外分公司搬迁、项目转移和 SOP 建设。但我也意识到自己更多是在执行和推进层面，商业判断、战略分析、财务逻辑和组织管理框架还不够系统。\n\n所以我选择读全日制 MBA，不是为了转一个完全无关的方向，而是想把原来的项目经验上升到更系统的商业判断能力。MBA 期间我做了品牌调研、汽车后市场服务体系评估等项目，也把过去海外项目经验沉淀成关于马来西亚子公司跨文化冲突管理的论文。这个过程让我更确定，自己适合做出海业务里连接业务、组织和流程的角色。"
+  },
+  {
+    "id": 18,
+    "question": "你认为读MBA给你带来了什么帮助？",
+    "variants": [
+      "你认为读MBA给你带来了什么帮助"
+    ],
+    "keywords": [
+      "MBA",
+      "帮助"
+    ],
+    "module": "Timeline",
+    "recommended": false,
+    "answer": "MBA 对我最大的帮助是，把原来偏经验型的判断，变成更系统、更结构化的分析方式。\n\n比如在面对复杂问题时，我会形成一个框架去拆信息、找关键变量，让判断不完全依赖直觉，更可复盘、可解释。\n\n具体项目：\n\n「我举一个比较典型的例子。当时有一位领导的南非朋友，通过我们公司询盘采购一批相机，领导本身时间有限，希望尽快给对方一个专业、可信的反馈。\n\n最初采购同事给到我的是一版国内供应商+报价信息，但我判断，如果我直接把这份信息交给领导，他还需要自己再去判断\"价格合不合理”“能不能按期交付”“有没有隐藏风险”等。\n\n于是我多做了一步，先帮领导把决策前的关键问题想清楚。我补充做了三件事:\n\n横向补充信息来源\n\n1. 不只看国内渠道，还调研了日本、美国等海外电商平台，确认是否存在更优的采购与直发方案；\n\n2. 把隐性风险提前显性化比如相机涉及电池空运，需要电池报告；不同渠道在发货周期、节假日、库存颜色上存在差异；有些方案表面便宜，但算上合规和物流成本，实际更贵；\n\n3. 用结构化方式替领导“预判断“\n\n我把所有方案信息整理成一张对比表，从【价格/周期/风险/操作复杂度】几个维度进行对比，并在表格里标注哪些是风险高的方案，哪些是性价比高的方案，同时给出我的判断建议。最终领导只需要快速浏览对比结果和结论，就能直接做决定，他后来专门从南非给我打电话，确认整个过程，并跟我说：谢谢你站在我的角度帮我把事情想清楚。"
+  },
+  {
+    "id": 19,
+    "question": "如果入职，你前 30 天会如何开展工作？",
+    "variants": [
+      "如果入职，你前 30 天会如何开展工作"
+    ],
+    "keywords": [
+      "入职后",
+      "如何工作"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "前 30 天我会先理解业务，再进入优化。\n\n第一阶段是了解公司的产品、客户、业务目标、重点项目和团队分工，明确这个岗位真正需要支持的结果。\n\n第二阶段是建立一个基础项目台账，梳理项目目标、关键节点、责任人、当前进度、风险和待决策事项。\n\n第三阶段是选一个具体项目或流程进行深入，找出最影响推进效率的一个问题，比如信息分散、职责不清、节点缺失或重复沟通。\n\n30 天内我不会急于大范围改流程，而是先形成一份可靠的现状判断，并交付一个小而明确的改善成果，例如项目跟进模板、风险清单、会议行动项机制或资料归档结构。"
+  },
+  {
+    "id": 20,
+    "question": "你为什么认为自己适合这些方向？你的优势是什么？",
+    "variants": [
+      "你为什么认为自己适合这些方向",
+      "你的优势是什么"
+    ],
+    "keywords": [
+      "为什么合适",
+      "优势"
+    ],
+    "module": "Capabilities",
+    "recommended": true,
+    "answer": "我认为自己适合 PMO、项目管理和流程优化支持，主要是因为我擅长并长期在处理同一类问题：把复杂、分散、不确定的信息结构化，并推动它进入下一步判断或执行。\n\n我过去在制造业主导过 3 个从 0 到 1 的海外重点项目，涉及可行性分析、资源规划、成本控制、风险预案和跨部门推进。我的优势是能够把客户需求、资源、节点、风险和责任人串起来，让项目从模糊状态进入可跟踪、可决策的状态。\n\nMBA 之后，我又通过多方实践，补充了商业分析、信息整理和工具化能力。所以我更适合做连接业务、流程和协作的岗位。"
+  },
+  {
+    "id": 21,
+    "question": "对于这个方向，你的缺点是什么？",
+    "variants": [
+      "对于这个方向，你的缺点是什么"
+    ],
+    "keywords": [
+      "缺点"
+    ],
+    "module": "Capabilities",
+    "recommended": false,
+    "answer": "我目前比较明显的短板，是还没有在某一个细分行业里连续深耕很多年，也没有长期使用同一套企业级 PMO 系统或方法论。\n\n但我过去的项目经验让我具备了比较强的迁移能力。比如制造业海外项目训练了我做项目拆解、资源规划、风险控制和跨部门推进；MBA 和后续项目又补充了商业分析、市场调研和信息结构化能力。\n\n我现在的补足方式是收窄方向，在一个具体行业里至少沉淀 3 年，先把公司的产品、流程、项目节奏和关键指标吃透，再把过去的广度转化成这个行业里的深度。"
+  },
+  {
+    "id": 22,
+    "question": "你没有很深的某一类产品或行业经验，为什么能做这个方向？",
+    "variants": [
+      "你没有很深的某一类产品或行业经验，为什么能做这个方向"
+    ],
+    "keywords": [
+      "没有垂直行业经验",
+      "为什么能做",
+      "为什么选你"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我认同自己目前还不是某个细分行业的专家，但 PMO 和项目支持岗位的核心能力，很多时候不是先验地知道所有行业细节，而是能否快速理解业务、搭建项目结构、识别关键变量并推动协作。\n\n我过去在汽车线束制造业做海外项目时，也不是一开始就熟悉所有客户、工艺和供应链细节，而是在项目推进中逐步建立对产品、资源、流程和风险的理解。\n\n我已经验证过自己能够迁移这套方法：在外贸项目中，我能快速梳理股权关系、合作模式、产品逻辑和采购风险；在跨境运营中，我参与搭建 Temu Y2 模式，并在两周内推动订单从 0 到 600 单/天。\n\n入职后我会用前 1-2 个月补产品和行业知识，同时用项目管理能力先承担信息整理、流程推进和风险跟踪的工作。"
+  },
+  {
+    "id": 23,
+    "question": "说说你选择这个方向的动机？",
+    "variants": [
+      "说说你选择这个方向的动机"
+    ],
+    "keywords": [
+      "动机"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我的动机是过去几段经历让我逐渐确认了自己的优势位置。\n\n制造业海外项目让我确认，我能在复杂项目和跨部门协作中发挥价值；外贸项目让我接触到客户、供应商、报价、物流和合规风险；猎头经历让我理解岗位需求和人才匹配；跨境运营让我看到平台和订单端的高频问题；AI 实践则让我开始思考如何降低信息整理和流程协作成本。\n\n这些经历看起来分散，但它们共同指向一个问题：如何把复杂业务拆清楚、推动下去，并沉淀成可复用的方法。\n\n所以我现在选择 PMO、项目管理、流程优化，并用AI 支持，是把过去的经验收束到一个更适合长期发展的方向。"
+  },
+  {
+    "id": 24,
+    "question": "你喜欢这个方向工作的哪些点？",
+    "variants": [
+      "你喜欢这个方向工作的哪些点"
+    ],
+    "keywords": [
+      "这个方向吸引你的点"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我喜欢它连接业务、流程和人。它不是单纯执行任务，还需要理解市场、客户、供应链、团队协作和风险边界。\n\n对我来说，最有吸引力的是它需要在不确定中建立结构：把分散信息整理成判断依据，把跨部门协作变成清晰节点，把项目经验沉淀成 SOP 或知识库。这和我的优势比较匹配。"
+  },
+  {
+    "id": 25,
+    "question": "你在项目推进中遇到过最大的困难是什么？怎么解决？",
+    "variants": [
+      "你在项目推进中遇到过最大的困难是什么",
+      "怎么解决"
+    ],
+    "keywords": [
+      "项目",
+      "困难",
+      "解决"
+    ],
+    "module": "Cases",
+    "recommended": false,
+    "answer": "最大困难我认为是信息不完整情况下的跨部门协同。海外项目中，客户需求、生产资源、采购周期、仓储安排、海外分公司执行能力都可能变化，如果没有结构化机制，很容易变成大家各自推进，最后节点对不上。\n\n我的解决方式是把模糊问题显性化，比如先把项目拆成关键节点和责任部门；再把每个节点的输入、输出、风险和截止时间写清楚；最后建立问题清单，定期更新状态。这样即使问题没有立即解决，也能知道它卡在哪里、谁需要决策、延误会影响什么。\n\n这个方法帮助我在过去海外项目中推动约 30 人跨部门团队协同，也沉淀成后续 SOP 和知识档案。"
+  },
+  {
+    "id": 26,
+    "question": "你说建立过 SOP 和知识档案，具体包含什么？",
+    "variants": [
+      "你说建立过 SOP 和知识档案，具体包含什么"
+    ],
+    "keywords": [
+      "建立",
+      "SOP",
+      "知识"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我之前做海外项目平台工程师时，有一个比较典型的SOP沉淀案例。\n\n当时海外项目从立项到量产会涉及客户需求、资源规划、采购、生产、仓储、质量、海外分公司等多个环节。问题是很多信息和经验都分散在不同部门和个人手里，项目推进时容易出现重复确认、节点不清、风险暴露太晚的问题。\n\n我当时结合国内项目流程，重新整合成海外项目的几个关键阶段：前期可行性分析、设计验证、OTS、小批量验证、量产复盘、海外转移和落地量产。然后把每个阶段需要确认的信息、责任部门、关键风险点和输出物整理成 SOP 和知识档案。\n\n这个动作的价值是让后续项目不用每次都从零开始摸索。团队可以更快知道某个节点该找谁、要确认什么、哪些风险不能拖到后面。后来在项目推进中，我们也通过这种流程化方式支持了 3 个从 0 到 1 的海外重点项目落地，并推动部分项目转移到海外分公司按期量产。"
+  },
+  {
+    "id": 27,
+    "question": "AI可以怎么和业务岗位结合？",
+    "variants": [
+      "AI可以怎么和业务岗位结合"
+    ],
+    "keywords": [
+      "AI",
+      "业务",
+      "结合"
+    ],
+    "module": "Thinking Model",
+    "recommended": false,
+    "answer": "我认为 AI 对业务项目最现实的价值，是降低信息处理成本和知识沉淀成本。项目信息比较多而零散，包括政策、市场、客户、合作方、供应链、候选人、内部流程和历史项目。如果这些信息只能靠人工记忆和零散文档，组织效率会很低。\n\nAI 可以先用于三个场景：第一，信息整理和摘要，比如市场资料、会议纪要、项目文档；第二，结构化对比，比如供应商、候选人、合作方和市场进入方案；第三，SOP 和知识库沉淀，比如把项目经验变成检查清单和复用模板。\n\n但我也认为 AI 不能替代关键业务判断，尤其涉及合规、成本和合作关系时，它可以协助，但最终必须由人验证和负责。"
+  },
+  {
+    "id": 28,
+    "question": "最能概括你的三个词是什么？",
+    "variants": [
+      "最能概括你的三个词是什么"
+    ],
+    "keywords": [
+      "概括你",
+      "形容你",
+      "词"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我会用三个词概括自己：理性、稳定、结构化。\n\n理性是指我遇到问题时比较少被情绪带走，会先拆事实、变量和风险。\n\n稳定是指我在复杂协同或压力场景里，通常能保持基本节奏，不会因为一时混乱失去判断。\n\n结构化是指我习惯把分散信息整理成框架、清单、流程或 SOP。\n\n这三个特点也对应我想做的方向：出海业务 PMO 和国际项目管理需要的不是一时冲劲，而是能在复杂信息里持续推进。"
+  },
+  {
+    "id": 29,
+    "question": "别人对你是如何评价的？",
+    "variants": [
+      "别人对你是如何评价的"
+    ],
+    "keywords": [
+      "别人",
+      "评价"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "我收到比较多的评价是理智、情绪稳定、理解力强。\n\n“理智”是因为我处理问题时会先看事实和逻辑，不太会直接情绪化反应。\n\n“情绪稳定”是因为在项目压力或沟通冲突中，我通常能先把事情拆清楚，而不是急着表达不满。\n\n“理解力强”是因为我能比较快抓到一个复杂问题的关键结构，比如这个项目的核心风险在哪里、这个岗位真正需要什么、这个流程卡点是什么。\n\n我不会说这些特点在所有场景都是优势，但对出海项目管理、跨部门协同和流程优化来说，它们是比较有帮助的。"
+  },
+  {
+    "id": 30,
+    "question": "你希望跟什么样的上级共事？",
+    "variants": [
+      "你希望跟什么样的上级共事"
+    ],
+    "keywords": [
+      "什么样",
+      "上级",
+      "共事"
+    ],
+    "module": "Contact",
+    "recommended": false,
+    "answer": "我希望上级能给我明确的目标，但允许我自己规划路线图。我喜欢在项目边界内自主搭建推进结构。当我需要上级做决策的时候，我会带着风险清单和备选方案去，而不是带着问题去，上级可以是一个‘点头或摇头、并给我提出建议的决策者’，而不需要是‘手把手教我怎么写邮件的老师’。"
+  },
+  {
+    "id": 31,
+    "question": "你喜欢跟什么样的同事合作？",
+    "variants": [
+      "你喜欢跟什么样的同事合作"
+    ],
+    "keywords": [
+      "什么样",
+      "同事",
+      "合作"
+    ],
+    "module": "Contact",
+    "recommended": false,
+    "answer": "我喜欢和情绪稳定、大家拿事实和逻辑说话、做事有交代的人合作。大家可以有不同意见，但最好能围绕事实和问题本身讨论，而不是把大量精力消耗在人际猜测上。"
+  },
+  {
+    "id": 32,
+    "question": "什么会让你有成就感？你有哪些成就？",
+    "variants": [
+      "什么会让你有成就感",
+      "你有哪些成就"
+    ],
+    "keywords": [
+      "成就感"
+    ],
+    "module": "About",
+    "recommended": false,
+    "answer": "能让我有成就感的事情，是把一件原本混乱、不确定、没有结构的事情，从 0 到 1 搭起来，并且让它能被别人继续使用。\n\n比如工作上，我曾主导 3 个从 0 到 1 的数百万级海外项目，推动约 30 人跨部门团队协作，最终低于预算 5%-10% 达成目标；也参与海外分公司搬迁和项目转移，让项目按期量产。\n\n学习和工具上，我从 0 到 1 学习 AI Agent / Skill，做了属地化运营文化冲突分析、SOP 改写、候选人与 JD 匹配分析等工具。\n\n所以我对成就感的理解不是单纯获得表扬，而是把复杂问题变成可执行、可复用、可沉淀的东西。"
+  },
+  {
+    "id": 33,
+    "question": "你有什么业余爱好？",
+    "variants": [
+      "你有什么业余爱好"
+    ],
+    "keywords": [
+      "兴趣爱好"
+    ],
+    "module": "Writing",
+    "recommended": false,
+    "answer": "我的业余爱好主要是阅读、写作、研究 AI 工具和运动。\n\n阅读和写作帮助我整理思考，我也有自己的公众号“她与 AI 时代”，会记录 AI 工具、职业规划和个人观察。AI 工具实践是兴趣，也是和工作相关的能力延伸。运动主要是为了保持稳定状态和精力。"
+  },
+  {
+    "id": 34,
+    "question": "你最喜欢的书籍是什么？",
+    "variants": [
+      "你最喜欢的书籍是什么"
+    ],
+    "keywords": [
+      "喜欢的书"
+    ],
+    "module": "Writing",
+    "recommended": false,
+    "answer": "最近对我比较有启发的是曾仕强老师的《中国式管理》。我读 MBA 的项目本身是 SiMBA，也就是 SinoMBA，所以我会对中国管理语境和西方管理理论之间的差异比较敏感。\n\n这本书吸引我的地方，不是把中国式管理简单理解成人情世故，而是让我思考：为什么同样一套制度、流程或 KPI，在不同文化和组织环境里会产生不同效果。\n\n这和我关注的跨文化管理、出海业务本地化也有关系。\n\n所以我读这类书，是希望更好理解中外管理逻辑的差异，帮助自己未来在出海项目或跨文化协作中，把总部要求和当地执行现实之间的落差处理得更稳。\n\n文学作品的话，我比较喜欢《沧浪之水》。表面上它写的是体制系统中的个人处境和人际关系，但我读它时更关注的是人在复杂组织系统里如何理解规则、资源、关系和个人选择。\n\n它让我意识到，很多组织问题不是简单的个人能力问题，而是制度、评价机制、资源分配和沟通方式共同作用的结果。这和我后来关注跨文化管理、总部制度如何在海外组织落地，也有一定关联。"
+  },
+  {
+    "id": 35,
+    "question": "Idea Coach Skill 是做什么的？",
+    "variants": [
+      "Idea Coach Skill 是做什么的"
+    ],
+    "keywords": [
+      "Idea",
+      "Coach",
+      "Skill"
+    ],
+    "module": "Cases",
+    "recommended": false,
+    "answer": "Idea Coach Skill 用来把模糊想法逐步澄清成需求、MVP、规格文档或 Skill 设计。它强调先问清楚问题，再进入方案和实现，适合用于新项目、新工具或自动化流程的前期梳理。"
+  },
+  {
+    "id": 36,
+    "question": "Writing Style Skill 是做什么的？",
+    "variants": [
+      "Writing Style Skill 是做什么的"
+    ],
+    "keywords": [
+      "Writing",
+      "Style",
+      "Skill"
+    ],
+    "module": "Cases",
+    "recommended": false,
+    "answer": "Writing Style Skill 用来沉淀我的中文写作风格，帮助进行公众号文章、个人表达、AI 味降低、结构优化和文章拆分。它也是我把个人表达系统化的一次实践。"
+  },
+  {
+    "id": 37,
+    "question": "你的公众号主要写什么？",
+    "variants": [
+      "你的公众号主要写什么"
+    ],
+    "keywords": [
+      "公众号",
+      "公众号主要写"
+    ],
+    "module": "Writing",
+    "recommended": false,
+    "answer": "公众号「她与 AI 时代」主要记录 AI 工具实践、Agent / Skills 搭建、个人工作流、出海组织与跨文化管理观察，以及 AI 如何改变人与系统的协作方式。"
+  }
+];
+
+const recommendedLabels = {
+  "7": "你在找什么样的公司和岗位？",
+  "20": "你的优势是什么？",
+  "14": "你能为我们带来什么？"
+};
+const recommendedOrder = [7, 20, 14];
+
+const fallbackAnswer = "这个问题暂时无法由 DeepSeek API 回答，也没有命中本地预设问答。你可以换一种更具体的问法，或通过 Contact 模块联系我。";
+
+const chatToggle = document.querySelector("#chatToggle");
+const chatPanel = document.querySelector("#chatPanel");
+const chatClose = document.querySelector("#chatClose");
+const chatQuestions = document.querySelector("#chatQuestions");
+const chatAnswer = document.querySelector("#chatAnswer");
+const chatForm = document.querySelector("#chatForm");
+const chatInput = document.querySelector("#chatInput");
+
+const apiChatEndpoint = window.location.protocol === "file:" ? "http://localhost:8787/api/chat" : "/api/chat";
+const chatHistory = [];
+
+const connectorPattern = /对于|关于|我们|你们|自己|什么样|为什么|是不是|有没有|会不会|能不能|和|与|及|或|对|在|给|为|的|了|吗|呢|是|有|能|可以|怎么|如何|什么|哪些|一个|一下|请|你|谈谈|说说|讲讲|陈述|认为|觉得|看待|看法/g;
+
+const strongSingleKeywords = new Set([
+  "ai",
+  "mba",
+  "sop",
+  "pmo",
+  "跳槽",
+  "加班",
+  "薪资",
+  "书籍",
+  "公众号",
+  "离职",
+  "稳定性",
+  "跨文化",
+  "流程优化",
+  "信息结构化",
+  "文化差异",
+  "合规",
+  "招聘",
+  "猎头",
+  "外贸",
+  "学历",
+  "薪酬",
+  "工资",
+  "优点",
+  "缺点",
+  "优势",
+  "短板",
+  "贡献",
+]);
+
+const weakSingleKeywords = new Set([
+  "项目",
+  "案例",
+  "业务",
+  "岗位",
+  "公司",
+  "工作",
+  "团队",
+  "管理",
+  "价值",
+  "流程",
+  "支持",
+  "看法",
+  "观点",
+]);
+
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[\s，。！？、；：,.!?;:\-_/（）()“”"'‘’【】\[\]]/g, "");
+}
+
+function keywordParts(value) {
+  return String(value || "")
+    .toLowerCase()
+    .split(/[\s+，。！？、；：,.!?;:\-_/（）()“”"'‘’【】\[\]]+/)
+    .flatMap((part) => part.split(connectorPattern))
+    .map((part) => normalizeText(part))
+    .filter((part) => part.length >= 2);
+}
+
+function setPanelOpen(isOpen) {
+  chatPanel.classList.toggle("open", isOpen);
+  chatToggle.setAttribute("aria-expanded", String(isOpen));
+  if (isOpen) {
+    window.setTimeout(() => chatInput?.focus(), 60);
+  }
+}
+
+function setAnswer(text) {
+  chatAnswer.textContent = text;
+}
+
+function cleanAnswerText(text) {
+  return String(text || "")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/^\s(0, 3)#(1, 6)\s+/gm, "")
+    .replace(/^\s*[-*]\s+/gm, "")
+    .replace(/`([^`]+)`/g, "$1")
+    .trim();
+}
+
+function renderAnswer(item, sourceButton) {
+  document
+    .querySelectorAll(".chat-questions button")
+    .forEach((node) => node.classList.toggle("active", node === sourceButton));
+  setAnswer(item.answer || fallbackAnswer);
+}
+
+function scorePhrase(normalizedQuery, normalizedPhrase) {
+  if (!normalizedPhrase) return 0;
+  if (normalizedQuery === normalizedPhrase) return 12;
+  if (normalizedPhrase.includes(normalizedQuery) && normalizedQuery.length >= 4) return 8;
+  if (normalizedQuery.includes(normalizedPhrase) && normalizedPhrase.length >= 4) return 6;
+  return 0;
+}
+
+function isPartMatched(normalizedQuery, queryParts, part) {
+  return normalizedQuery.includes(part) || queryParts.some((queryPart) => part.includes(queryPart));
+}
+
+function scoreKeyword(normalizedQuery, queryParts, keyword) {
+  const normalizedKeyword = normalizeText(keyword);
+  let score = scorePhrase(normalizedQuery, normalizedKeyword);
+  const parts = keywordParts(keyword);
+
+  if (parts.length >= 2) {
+    const matchedCount = parts.filter((part) => isPartMatched(normalizedQuery, queryParts, part)).length;
+    if (matchedCount === parts.length) {
+      score += 12 + parts.length;
+    } else if (matchedCount >= 2) {
+      score += 5 + matchedCount * 2;
+    }
+  } else if (parts.length === 1) {
+    const part = parts[0];
+    if (
+      isPartMatched(normalizedQuery, queryParts, part) &&
+      !weakSingleKeywords.has(part) &&
+      (part.length >= 3 || strongSingleKeywords.has(part))
+    ) {
+      score += strongSingleKeywords.has(part) ? 10 : 7;
+    }
+  }
+
+  return score;
+}
+
+function keywordMatched(normalizedQuery, queryParts, keyword) {
+  const normalizedKeyword = normalizeText(keyword);
+  const parts = keywordParts(keyword);
+  if (scorePhrase(normalizedQuery, normalizedKeyword) > 0) return true;
+  if (parts.length >= 2) {
+    return parts.filter((part) => isPartMatched(normalizedQuery, queryParts, part)).length >= 2;
+  }
+  if (parts.length === 1) {
+    return isPartMatched(normalizedQuery, queryParts, parts[0]);
+  }
+  return false;
+}
+
+function findAnswer(query) {
+  const normalizedQuery = normalizeText(query);
+  if (!normalizedQuery || normalizedQuery.length < 2) return null;
+  const queryParts = keywordParts(query);
+
+  let bestMatch = null;
+  let bestScore = 0;
+
+  qaItems.forEach((item) => {
+    let score = 0;
+
+    [item.question, ...(item.variants || [])].forEach((phrase) => {
+      score += scorePhrase(normalizedQuery, normalizeText(phrase));
+    });
+
+    let matchedKeywordCount = 0;
+    (item.keywords || []).forEach((keyword) => {
+      score += scoreKeyword(normalizedQuery, queryParts, keyword);
+      if (keywordMatched(normalizedQuery, queryParts, keyword)) {
+        matchedKeywordCount += 1;
+      }
+    });
+    if (matchedKeywordCount >= 2) {
+      score += 8 + matchedKeywordCount;
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = item;
+    }
+  });
+
+  return bestScore >= 6 ? bestMatch : null;
+}
+
+async function askDeepSeek(query) {
+  const response = await fetch(apiChatEndpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      message: query,
+      history: chatHistory.slice(-6),
+    }),
+  });
+
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok || !payload.answer) {
+    throw new Error(payload.error || "DeepSeek API request failed");
+  }
+  return cleanAnswerText(payload.answer);
+}
+
+recommendedOrder
+  .map((id) => qaItems.find((item) => item.id === id))
+  .filter(Boolean)
+  .forEach((item) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = recommendedLabels[item.id] || item.question;
+    button.addEventListener("click", () => renderAnswer(item, button));
+    chatQuestions.append(button);
+  });
+
+chatForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const query = chatInput.value.trim();
+  if (!query) return;
+
+  document
+    .querySelectorAll(".chat-questions button")
+    .forEach((node) => node.classList.remove("active"));
+
+  chatInput.value = "";
+  chatInput.disabled = true;
+  setAnswer("正在调用 DeepSeek 生成回答...");
+
+  try {
+    const answer = await askDeepSeek(query);
+    chatHistory.push({ role: "user", content: query });
+    chatHistory.push({ role: "assistant", content: answer });
+    setAnswer(answer);
+  } catch (error) {
+    console.error("Ask Yamu API error:", error);
+    const match = findAnswer(query);
+    const isLocalPreview =
+      window.location.protocol === "file:" ||
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    setAnswer(
+      match
+        ? match.answer
+        : isLocalPreview
+          ? "本地 API 暂时无法调用。请确认 .env 中已配置 DEEPSEEK_API_KEY，并重新启动 http://localhost:8787。"
+          : fallbackAnswer
+    );
+  } finally {
+    chatInput.disabled = false;
+    chatInput.focus();
+  }
+});
+
+chatToggle.addEventListener("click", () => {
+  setPanelOpen(!chatPanel.classList.contains("open"));
+});
+
+chatClose.addEventListener("click", () => {
+  setPanelOpen(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setPanelOpen(false);
+  }
+});
