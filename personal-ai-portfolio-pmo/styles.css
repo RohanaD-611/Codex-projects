@@ -425,6 +425,15 @@ h4 {
   max-width: 880px;
 }
 
+.thinking-lead {
+  /* Matches the first track of the two-column Thinking Model grid. */
+  max-width: calc(55.5556% - 26.6667px);
+}
+
+.thinking-section .section-heading.wide {
+  max-width: none;
+}
+
 .timeline {
   position: relative;
   border-top: 1px solid var(--ink);
@@ -901,6 +910,10 @@ figcaption {
   .about-body {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+
+  .thinking-lead {
+    max-width: none;
   }
 
   .hero {
